@@ -3,7 +3,7 @@ import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import Button from 'react-bootstrap/Button'
 
-const Footer = ({author, showButchered, setShowButchered}) => {
+const Footer = ({author, showButchered, setShowButchered, newQuote, reButcher, loadingRebutcher, loadingQuote}) => {
     const handleButcheredChange = (val) => {
         setShowButchered(val)
     }
@@ -17,8 +17,12 @@ const Footer = ({author, showButchered, setShowButchered}) => {
                     Original
                 </ToggleButton>
             </ToggleButtonGroup>
-            <Button variant="outline-light" style={{float: "left", marginLeft: "20px"}} size="sm">Re-butcher</Button>
-            <Button variant="outline-light" style={{float: "left", marginLeft: "20px"}} size="sm">New Quote</Button>
+            <Button variant="outline-light" style={{float: "left", marginLeft: "20px"}} size="sm" onClick={() => {reButcher()}} disabled={loadingRebutcher}>
+                {loadingRebutcher ? "loading... " : "Re-Butcher"}
+            </Button>
+            <Button variant="outline-light" style={{float: "left", marginLeft: "20px"}} size="sm" onClick={() => {newQuote()}} disabled={loadingQuote}>
+                {loadingQuote ? "loading... " : "New Quote"}
+            </Button>
             
             <h3 style={{float: "right", color:"white"}}> ~ {author}</h3>
         </div>

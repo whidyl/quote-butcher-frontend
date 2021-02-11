@@ -32,3 +32,26 @@
   outline: none !important;
   outline-offset: none !important;
 }
+
+
+.load-enter, .load-appear {
+  opacity: 0;
+}
+
+.load-enter-active, .load-appear-active {
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+
+.load-enter-done, .load-appear-done {
+  opacity: 0;
+}
+
+.load-exit {
+  opacity: 0;
+}
+
+.load-exit-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
