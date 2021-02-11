@@ -1,6 +1,7 @@
-import './App.css';
 import { useState } from 'react';
 import CenterContent from './components/CenterContent';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 function App() {
   const [videoFile] = useState("/videos/" + Math.ceil(Math.random()*10).toString() + ".mp4")
