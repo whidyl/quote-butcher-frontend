@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import CenterContent from './components/CenterContent';
 
 function App() {
+  const [videoFile] = useState("/videos/" + Math.ceil(Math.random()*10).toString() + ".mp4")
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <video autoPlay muted loop style={{
+                objectFit: "cover",
+                width: "100vw",
+                height: "100vh",
+                position: "fixed",
+                top: "0",
+                left: "0"}}> 
+            <source src={videoFile} type="video/mp4"/>
+            Your browser does not support HTML5 video.
+      </video>
+      <CenterContent/>
     </div>
   );
 }
