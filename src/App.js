@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
-  const [videoFile] = useState("/videos/" + Math.ceil(Math.random()*10).toString() + ".mp4")
+  const [videoFile] = useState("https://github.com/whidyl/quote-butcher-frontend/raw/master/public/videos/" + Math.ceil(Math.random()*10).toString() + ".mp4")
 
   return (
     <div className="App">
